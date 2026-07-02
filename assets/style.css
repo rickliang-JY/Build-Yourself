@@ -1,0 +1,80 @@
+:root {
+  --bg: #0f0f11;
+  --card: #1a1a1f;
+  --text: #e8e8ea;
+  --muted: #9a9aa2;
+  --accent: #e0b341;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  padding: 32px 20px 16px;
+  text-align: center;
+}
+.site-header h1 { margin: 0 0 6px; font-size: 26px; }
+.site-header p { margin: 0; color: var(--muted); }
+.count { margin-top: 8px; font-size: 13px; }
+
+main {
+  padding: 16px 20px 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .date {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 6px 8px;
+  font-size: 12px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .7));
+}
+a.card { transition: outline-color .15s; outline: 2px solid transparent; }
+a.card:hover { outline-color: var(--accent); }
+
+.empty { color: var(--muted); text-align: center; }
+
+/* detail page */
+.detail-header { text-align: left; max-width: 720px; margin: 0 auto; }
+.back { color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 8px; }
+.detail { max-width: 720px; }
+#day-photo { width: 100%; border-radius: 16px; display: block; margin-bottom: 20px; }
+.markdown { line-height: 1.7; }
+.markdown img { max-width: 100%; border-radius: 12px; }
+.markdown h1, .markdown h2, .markdown h3 { margin-top: 1.4em; }
+.markdown a { color: var(--accent); }
+.markdown blockquote {
+  margin: 1em 0;
+  padding: 4px 16px;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+.markdown code {
+  background: var(--card);
+  padding: 2px 6px;
+  border-radius: 5px;
+  font-size: .9em;
+}

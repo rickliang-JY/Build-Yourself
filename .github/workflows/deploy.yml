@@ -17,19 +17,16 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: template
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm run build
+      - name: Generate manifest.json
+        run: node scripts/build-manifest.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: template/dist
+          path: .
 
   deploy:
     needs: build

@@ -1,0 +1,13 @@
+{
+  "name": "build-yourself",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compress": "node scripts/compress.mjs",
+    "manifest": "node scripts/build-manifest.mjs",
+    "prepare-day": "node scripts/compress.mjs && node scripts/build-manifest.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}
